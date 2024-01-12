@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .containerButtons{
+            border: 2px solid;
+            width: 400px;
+            background-color: orange;
+            color: white;
+            width: 150px;
+            height: 55px;
+            font-size: x-large;
+            position: relative;
+            bottom: 130px;
+        }
+        .emptyBubble{
+            border: 2px solid;
+            border-radius: 200px;
+            background-color: lightblue;
+            width: 100px;
+        }
+        .center-screen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+        .positionButtonsDiv{
+            position: relative;
+            bottom: 1600px;
+        }
+        .gameDescription{
+            font-size: x-large;
+            position: relative;
+            bottom: 3350px;
+        }
+        .storyDiv{
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    
+    <script>
+        //Modell
+        let app = document.getElementById("app")
+        let name1container = 'name1';
+        let name2container = 'name2';
+        let verb1container = 'verb1';
+        let verb2container = 'verb2';
+        let placecontainer = 'place';
+        let adjectivecontainer = 'adjective';
+
+        //View
+        updateView();
+        function updateView(){
+            let html = ``;
+            html = /*HTML*/ `
+            <div class="center-screen storyDiv">
+                In a bustling city, two friends,&nbsp;<div class="emptyBubble">${name1container}</div>&nbsp;and&nbsp;<div class="emptyBubble">${name2container}</div>, strolled leisurely down the sunlit boulevard. They &nbsp;<div class="emptyBubble">${verb1container}</div>&nbsp; and &nbsp;<div class="emptyBubble">${verb2container}</div>,
+                relishing the warmth of the day and the tranquility of their favorite spot, at the &nbsp;<div class="emptyBubble">${placecontainer}</div>. As the afternoon unfolded, they savored the rare adjective that described their moment: "<div class="emptyBubble">${adjectivecontainer}</div>."
+            </div>
+            <div class="center-screen positionButtonsDiv">
+                <div class="containerButtons">
+                    NAME1
+                   <br>
+                    <button onclick="name1('Sarah')">Sarah</button>
+                    <button onclick="name1('Erna')">Erna</button>
+                </div>
+                <div class="containerButtons">
+                    NAME2
+                    <br>
+                    <button onclick="name2('Mark')">Mark</button>
+                    <button onclick="name2('Trond')">Trond</button>
+                </div>
+                <div class="containerButtons">
+                    VERB1
+                    <br>
+                    <button onclick="verb1('chatted')">chatted</button>
+                    <button onclick="verb1('farted')">farted</button>
+                </div>
+                <div class="containerButtons">
+                    VERB2
+                    <br>
+                    <button onclick="verb2('laughed')">laughed</button>
+                    <button onclick="verb2('run')">run</button>
+                </div>
+                <div class="containerButtons">
+                    PLACE
+                    <br>
+                    <button onclick="place('peaceful park')">peaceful park</button>
+                    <button onclick="place('moon')">moon</button>
+                </div>
+                <div class="containerButtons">
+                    ADJECTIVE
+                    <br>
+                    <button onclick="adjective('serene')">serene</button>
+                    <button onclick="adjective('mysterious')">mysterious</button>
+                </div>
+            </div>
+            <div class="center-screen gameDescription">Lag din egen historie der du velger hva som kommer til å skje, hvor det kommer til å skje og hva karakterene synes om opplevelsen til slutt, med dette "lag din egen historie" spill.</div>
+            `;
+            app.innerHTML = html;
+            return html;
+        }
+
+        // function showName1(){
+        //     name1container;
+        // }
+        
+        // function showName2(){
+        //     name2container;
+        // }
+
+        // function showVerb1(){
+        //     verb1container;
+        // }
+
+        // function showVerb2(){
+        //     verb2container;
+        // }
+
+        // function showPlace(){
+        //     placecontainer;
+        // }
+
+        // function showAdjective(){
+        //     adjectivecontainer;
+        // }
+        //Controller
+
+        function name1(nameInput){
+            name1container = nameInput;
+            updateView();
+        }
+
+        function name2(nameInput){
+            name2container = nameInput;
+            updateView();
+        }
+        
+        function verb1(verbInput){
+            verb1container = verbInput;
+            updateView();
+        }
+
+        function verb2(verbInput){
+            verb2container = verbInput;
+            updateView();
+        }
+
+        function place(placeInput){
+            placecontainer = placeInput;
+            updateView();
+        }
+
+        function adjective(adjectiveInput){
+            adjectivecontainer = adjectiveInput;
+            updateView();
+        }
+
+
+        
+
+
+        //Story In a bustling city, two friends, Sarah and Mark, strolled leisurely down the sunlit boulevard. They chatted and laughed, relishing the warmth of the day and the tranquility of their favorite spot, a peaceful park. As the afternoon unfolded, they savored the rare adjective that described their moment: "serene."
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
